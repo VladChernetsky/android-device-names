@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion buildConfig.compileSdk
+  buildToolsVersion buildConfig.buildTools
+
+  defaultConfig {
+    minSdkVersion buildConfig.minSdk
+    targetSdkVersion buildConfig.targetSdk
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+  namespace 'com.jaredrummler.android.device'
+}
+
+dependencies {
+  implementation deps.androidx.annotations
+}
